@@ -12,7 +12,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is Chatzilla.
+ * The Original Code is ambassador.
  *
  * The Initial Developer of the Original Code is
  * New Dimensions Consulting, Inc.
@@ -20,8 +20,11 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Ginda, rginda@ndcico.com, original author
- *   Manuel Strehl, boldewyn@googlemail.com, adaption of style to a dark motif
+ *   * Robert Ginda, rginda@ndcico.com, original author
+ *   * Manuel Strehl, boldewyn@googlemail.com, adaption of style to a dark
+ *     motif
+ *   * Alice Lia Stapleton, alice.stapleton@slimelia.uk, adapted to work with
+ *     Ambassador, the fork of ChatZilla for Goanna-based browsers
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -36,12 +39,12 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
  * ***** END LICENSE BLOCK ***** */
-/* After making edits to this, use /sync-output to reload it in chatzilla */
+/* After making edits to this, use /sync-output to reload it in ambassador */
 
 
-@import url(chrome://chatzilla/content/output-base.css);
+@import url(chrome://ambassador/content/output-base.css);
 
-body.chatzilla-body {
+.ambassador-body {
   background: #1B1D1E;
   color: #F8F8F2;
   font-family: "DejaVu Sans", sans-serif !important;
@@ -50,25 +53,25 @@ body.chatzilla-body {
 /**
  * --------------------------------------------------------- global properties
  */
-a.chatzilla-link {
+a.ambassador-link {
   color: #66D9EF;
   border: 0px solid #1B1D1E;
   -moz-transition: border-color, border-width;
   -moz-transition-duration: .5s;
 }
 
-a.chatzilla-link:visited {
+a.ambassador-link:visited {
   color: #66D9EF;
 }
 
-a.chatzilla-link:focus,
-a.chatzilla-link:hover {
+a.ambassador-link:focus,
+a.ambassador-link:hover {
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid;
 }
 
-.chatzilla-teletype {
+.ambassador-teletype {
   font-family: "DejaVu Sans Mono", monospace;
 }
 
@@ -110,36 +113,17 @@ treechildren {
   color: #465457 !important;
 }
 
-#chatzilla-window #user-list treechildren::-moz-tree-cell-text(away-false) {
+#ambassador-window #user-list treechildren::-moz-tree-cell-text(away-false) {
   color: #f8f8f2 !important;
 }
 
-#chatzilla-window #user-list treechildren::-moz-tree-row(selected) {
+#ambassador-window #user-list treechildren::-moz-tree-row(selected) {
   background-color: #000000 !important;
 }
 
-#chatzilla-window #user-list treechildren::-moz-tree-row(selected, focus) {
+#ambassador-window #user-list treechildren::-moz-tree-row(selected, focus) {
   background-color: #293739 !important;
   outline: none;
-}
-
-#chatzilla-window #user-list[mode="graphic"] treechildren::-moz-tree-image {
-  list-style-image: url("image/no-graphic.png") !important;
-}
-#chatzilla-window #user-list[mode="graphic"] treechildren::-moz-tree-image(voice-true) {
-  list-style-image: url("image/voice-graphic.png") !important;
-}
-#chatzilla-window #user-list[mode="graphic"] treechildren::-moz-tree-image(halfop-true) {
-  list-style-image: url("image/halfop-graphic.png") !important;
-}
-#chatzilla-window #user-list[mode="graphic"] treechildren::-moz-tree-image(op-true) {
-  list-style-image: url("image/op-graphic.png") !important;
-}
-#chatzilla-window #user-list[mode="graphic"] treechildren::-moz-tree-image(admin-true) {
-  list-style-image: url("image/admin-graphic.png") !important;
-}
-#chatzilla-window #user-list[mode="graphic"] treechildren::-moz-tree-image(founder-true) {
-  list-style-image: url("image/founder-graphic.png") !important;
 }
 
 /**
@@ -184,21 +168,21 @@ treechildren {
   color: #A6E22E;
 }
 
-.chatzilla-rheet {
+.ambassador-rheet {
   color: #F92672 !important;
 }
 
-.chatzilla-highlight[name="Slate"] {
+.ambassador-highlight[name="Slate"] {
   color: white;
   background: #15272d;
 }
 
-.chatzilla-highlight[name="Plum"] {
+.ambassador-highlight[name="Plum"] {
   color: white;
   background: #442144;
 }
 
-.chatzilla-highlight[name="Brown"] {
+.ambassador-highlight[name="Brown"] {
   color: white;
   background: #562a14;
 }
@@ -242,7 +226,7 @@ treechildren {
   border-top: 1px solid #1B1D1E;
 }
 
-.msg-user a.chatzilla-link,
+.msg-user a.ambassador-link,
 .msg-user {
   color: #BCBCBC;
 }
@@ -305,24 +289,24 @@ treechildren {
   color: #AE81FF;
 }
 
-.msg[msg-type="JOIN"] .msg-data a.chatzilla-link,
-.msg[msg-type="PART"] .msg-data a.chatzilla-link,
-.msg[msg-type="NOTICE"] .msg-data a.chatzilla-link,
-.msg[msg-type="MODE"] .msg-data a.chatzilla-link,
-.msg[msg-type="KICK"] .msg-data a.chatzilla-link,
-.msg[msg-type="QUIT"] .msg-data a.chatzilla-link {
+.msg[msg-type="JOIN"] .msg-data a.ambassador-link,
+.msg[msg-type="PART"] .msg-data a.ambassador-link,
+.msg[msg-type="NOTICE"] .msg-data a.ambassador-link,
+.msg[msg-type="MODE"] .msg-data a.ambassador-link,
+.msg[msg-type="KICK"] .msg-data a.ambassador-link,
+.msg[msg-type="QUIT"] .msg-data a.ambassador-link {
   border-bottom: 1px solid;
   color: inherit;
   -moz-transition-property: background;
   -moz-transition-duration: .5s;
 }
 
-.msg[msg-type="JOIN"] .msg-data a.chatzilla-link:hover,
-.msg[msg-type="PART"] .msg-data a.chatzilla-link:hover,
-.msg[msg-type="NOTICE"] .msg-data a.chatzilla-link:hover,
-.msg[msg-type="MODE"] .msg-data a.chatzilla-link:hover,
-.msg[msg-type="KICK"] .msg-data a.chatzilla-link:hover,
-.msg[msg-type="QUIT"] .msg-data a.chatzilla-link:hover {
+.msg[msg-type="JOIN"] .msg-data a.ambassador-link:hover,
+.msg[msg-type="PART"] .msg-data a.ambassador-link:hover,
+.msg[msg-type="NOTICE"] .msg-data a.ambassador-link:hover,
+.msg[msg-type="MODE"] .msg-data a.ambassador-link:hover,
+.msg[msg-type="KICK"] .msg-data a.ambassador-link:hover,
+.msg[msg-type="QUIT"] .msg-data a.ambassador-link:hover {
   background: black;
 }
 
@@ -378,5 +362,3 @@ treechildren {
 .msg[msg-type="EVAL-OUT"] .msg-data {
   font-family: "DejaVu Sans Mono", monospace;
 }
-
-
